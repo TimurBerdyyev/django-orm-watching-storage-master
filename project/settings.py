@@ -1,13 +1,10 @@
 import os
 import dj_database_url
-from environs import Env
+
 from dotenv import load_dotenv
 
 
 load_dotenv()
-env = Env()
-env.read_env() 
-
 
 
 DATABASES = {
