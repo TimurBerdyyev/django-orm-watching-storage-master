@@ -1,11 +1,10 @@
 import os
-import dj_database_url
 from environs import Env
-from dotenv import load_dotenv
+import dj_database_url
 
 
-load_dotenv()
 env = Env()
+env.read_env()
 
 
 DATABASES = {
@@ -16,7 +15,7 @@ DATABASES = {
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = env.str('SECRET_KEY')
 
 DEBUG = env.bool("DEBUG_KEY", default=False)
 
